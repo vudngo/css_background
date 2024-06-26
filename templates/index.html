@@ -1,0 +1,68 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #3FCFA4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #3FCFA4;
+        }
+    </style>
+</head>
+<body>
+    <h2>Upload a CSV File</h2>
+    <div class="container">
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <label for="api_key">Project UUID (Optional):</label>
+            <input type="text" name="project_uuid"><br><br>
+            
+            <label for="api_key">API Key:</label>
+            <input type="text" name="api_key" required><br><br>
+            
+            <input type="file" name="file" accept=".csv">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
